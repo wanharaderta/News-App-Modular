@@ -1,3 +1,3 @@
 # Article
 
-A description of this package.
+Feature Article

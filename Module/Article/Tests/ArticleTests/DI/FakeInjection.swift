@@ -1,8 +1,8 @@
 //
-//  Injection.swift
-//  News App Modular
+//  File.swift
+//  
 //
-//  Created by Wanhar on 07/05/21.
+//  Created by Wanhar on 09/05/21.
 //
 
 import Foundation
@@ -10,13 +10,10 @@ import Article
 import Core
 import UIKit
 
-final class Injection: NSObject {
+final class FakeInjection: NSObject {
   func provideArticles<U: UseCase>() -> U where U.Request == String, U.Response == [ArticleModel] {
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-         fatalError(errorMessageDelegate)
-    }
-    let locale = ArticlesLocaleDataSourceImpl(realm: appDelegate.realm)
-    let remote = ArticlesRemoteDataSource(endpoint: Endpoints.Gets.news.url)
+    let locale = FakeArticlesLocaleDataSourceImpl()
+    let remote = FakeArticlesRemoteDataSource()
     let mapper = ArticlesTransformer()
     let repository = ArticlesRepository(
       localeDataSource: locale,

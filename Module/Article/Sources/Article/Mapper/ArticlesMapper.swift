@@ -11,9 +11,11 @@ import Core
 public protocol ArticlesMapper: Mapper {
   func transformResponseToDomain(response: Response) -> Domain
   func transformEntitiesToDomain(entities: Entity) -> Domain
+  func transformResponseToEntity(response: Response) -> Entity
 }
 
 public struct ArticlesTransformer: ArticlesMapper {
+   
   public typealias Response = [ArticleResponse]
   public typealias Entity = [ArticleEntity]
   public typealias Domain = [ArticleModel]
@@ -44,5 +46,23 @@ public struct ArticlesTransformer: ArticlesMapper {
         content: result.content,
         description: result.desc)
     }
+  }
+  
+  public func transformResponseToEntity(response: [ArticleResponse]) -> [ArticleEntity] {
+    return response.map { result in
+      transformResponseToEntity(response: result)
+    }
+  }
+
+  func transformResponseToEntity(response : ArticleResponse) -> ArticleEntity {
+    let articleEntity = ArticleEntity()
+    articleEntity.itemId = response.id
+    articleEntity.author = response.author ?? ""
+    articleEntity.sourceName = response.source?.name ?? ""
+    articleEntity.title = response.title ?? ""
+    articleEntity.urlToImage = response.urlToImage ?? ""
+    articleEntity.content = response.content ?? ""
+    articleEntity.desc = response.description ?? ""
+    return articleEntity
   }
 }

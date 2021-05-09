@@ -43,3 +43,22 @@ public struct ArticleResponse: Decodable {
 public struct Source: Decodable {
   let name: String?
 }
+
+extension ArticleResponse {
+
+  public static var mockArticles: [ArticleResponse] {
+    return [ArticleResponse.mockArticle]
+  }
+  
+  public static var mockArticle: ArticleResponse {
+    ArticleResponse (
+      source: nil,
+      author: "mock author",
+      title: "mock title",
+      description: "mock description",
+      url: "mock url",
+      urlToImage: "mock urlToImage",
+      publishedAt: "mock publishedAt",
+      content: "mock content")
+  }
+}

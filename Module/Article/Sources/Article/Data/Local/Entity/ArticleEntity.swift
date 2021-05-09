@@ -16,7 +16,6 @@ public class ArticleEntity: Object {
   @objc dynamic var urlToImage = ""
   @objc dynamic var content = ""
   @objc dynamic var desc = ""
-  @objc dynamic var favorite = false
   
   public override class func primaryKey() -> String? {
     return "itemId"

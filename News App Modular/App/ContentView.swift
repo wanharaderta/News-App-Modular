@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import Article
+import Core
 
 struct ContentView: View {
+  
+  @EnvironmentObject var articlesPresenter: ArticlesPresenter<ArticlesInteractor>
+  
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+       ArticlesView(presenter: articlesPresenter)
     }
 }
 

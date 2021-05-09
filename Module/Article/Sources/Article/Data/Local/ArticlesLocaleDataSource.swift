@@ -12,10 +12,10 @@ import Combine
 
 public protocol ArticlesLocaleDataSource: LocaleDataSource {
   func list(request: Request?) -> AnyPublisher<[Response], Error>
+  func add(entities: [Response]) -> AnyPublisher<Bool, Error>
 }
 
 public struct ArticlesLocaleDataSourceImpl: ArticlesLocaleDataSource {
-  
   public typealias Request = String
   public typealias Response = ArticleEntity
   
@@ -29,10 +29,24 @@ public struct ArticlesLocaleDataSourceImpl: ArticlesLocaleDataSource {
     return Future<[ArticleEntity], Error> { completion in
       let articleEntities = {
         _realm.objects(ArticleEntity.self)
-          .filter("favorite = \(true)")
       }()
       completion(.success(articleEntities.toArray(ofType: ArticleEntity.self)))
     }.eraseToAnyPublisher()
   }
   
+  public func add(entities: [ArticleEntity]) -> AnyPublisher<Bool, Error> {
+    return Future<Bool, Error> { completion in
+        do {
+            try _realm.write {
+                for meal in entities {
+                    _realm.add(meal, update: .all)
+                }
+                completion(.success(true))
+            }
+        } catch {
+            completion(.failure(DatabaseError.requestFailed))
+        }
+        
+    }.eraseToAnyPublisher()
+  }
 }

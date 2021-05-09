@@ -16,7 +16,6 @@ public struct ArticleModel: Equatable, Identifiable {
   public let urlToImage: String
   public let content: String
   public let description: String
-  public var favorite: Bool = false
   
   public init(
     id: String,
@@ -25,8 +24,7 @@ public struct ArticleModel: Equatable, Identifiable {
     title: String,
     urlToImage: String,
     content: String,
-    description: String,
-    favorite: Bool
+    description: String
   ){
     self.id = id
     self.author = author
@@ -35,6 +33,20 @@ public struct ArticleModel: Equatable, Identifiable {
     self.urlToImage = urlToImage
     self.content = content
     self.description = description
-    self.favorite = favorite
   }
 }
+
+extension ArticleModel {
+  public static var mockArticle: ArticleModel {
+    return ArticleModel(
+      id: "1",
+      author: "www.google.com",
+      sourceName: "Google",
+      title: "News",
+      urlToImage: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+      content: "Lorem example",
+      description: "Lorem example"
+      )
+  }
+}
+
