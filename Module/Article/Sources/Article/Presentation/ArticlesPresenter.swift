@@ -17,13 +17,9 @@ where ArticlesUseCase.Request == String, ArticlesUseCase.Response == [ArticleMod
   private let articlesUseCase: ArticlesUseCase
   
   @Published public var articles: [ArticleModel] = []
-  @Published public var articlesTemp: [ArticleModel] = []
-  @Published public var searchTemp: String = ""
   @Published public var errorMessage: String = ""
-  @Published public var currentDate: String = ""
   @Published public var isLoading: Bool = false
  
-  
   public init(articlesUseCase: ArticlesUseCase) {
     self.articlesUseCase = articlesUseCase
   }
