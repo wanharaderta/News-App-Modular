@@ -31,7 +31,7 @@ public struct ArticlesTransformer: ArticlesMapper {
         title: result.title ?? "",
         urlToImage: result.urlToImage ?? "",
         content: result.content ?? "",
-        description:result.description ?? "")
+        description: result.description ?? "")
     }
   }
   

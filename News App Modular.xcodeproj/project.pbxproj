@@ -29,6 +29,7 @@
 		83003CEB2646651C00694E2A /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		83136F732647DE5C00F6C791 /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		835B5361264824210028EF72 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		835BFEE82648CF1B0013A049 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		83892C872648273700FEBB75 /* ArticlesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRouter.swift; sourceTree = "<group>"; };
 		83DC2FE9264524570081EA22 /* News App Modular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News App Modular.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DC2FEC264524570081EA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		83DC2FE0264524570081EA22 = {
 			isa = PBXGroup;
 			children = (
+				835BFEE82648CF1B0013A049 /* .swiftlint.yml */,
 				83F0E7C62645476F00CA3AEC /* Article */,
 				83DC2FEB264524570081EA22 /* News App Modular */,
 				83DC2FEA264524570081EA22 /* Products */,
@@ -219,6 +221,7 @@
 				83DC2FE5264524570081EA22 /* Sources */,
 				83DC2FE6264524570081EA22 /* Frameworks */,
 				83DC2FE7264524570081EA22 /* Resources */,
+				835BFEEB2648CFDA0013A049 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -280,6 +283,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		835BFEEB2648CFDA0013A049 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83DC2FE5264524570081EA22 /* Sources */ = {

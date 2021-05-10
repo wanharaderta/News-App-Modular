@@ -20,7 +20,7 @@ final class ArticlesRepositoryTest: XCTestCase {
     articlesUseCase = FakeInjection.init().provideArticles()
   }
   
-  func testExecuteGetAllArticle(){
+  func testExecuteGetAllArticle() {
     articlesUseCase.execute(request: "")
       .sink(receiveCompletion: { (completion) in
         switch completion {
@@ -37,7 +37,7 @@ final class ArticlesRepositoryTest: XCTestCase {
   }
   
   static var allTests = [
-    ("testExecuteGetAllArticle", testExecuteGetAllArticle),
+    ("testExecuteGetAllArticle", testExecuteGetAllArticle)
   ]
   
   override func tearDown() {

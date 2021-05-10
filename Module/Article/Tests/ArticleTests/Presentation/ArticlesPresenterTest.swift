@@ -22,7 +22,7 @@ final class ArticlesPresenterTest: XCTestCase {
   func testPropertyPresenter() {
     XCTAssertFalse(presenter.isLoading)
     XCTAssertEqual(presenter.errorMessage, "")
-    XCTAssertTrue(presenter.articles.count == 0)
+    XCTAssertTrue(presenter.articles.isEmpty)
   }
   
   func testGetArticles() {
@@ -34,7 +34,7 @@ final class ArticlesPresenterTest: XCTestCase {
   
   static var allTests = [
     ("testPropertyPresenter", testPropertyPresenter),
-    ("testGetArticles", testGetArticles),
+    ("testGetArticles", testGetArticles)
   ]
   
 }

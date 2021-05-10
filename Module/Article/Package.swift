@@ -10,7 +10,7 @@ let package = Package(
     // Products define the executables and libraries a package produces, and make them visible to other packages.
     .library(
       name: "Article",
-      targets: ["Article"]) ,
+      targets: ["Article"])
   ],
   dependencies: [
     .package(name: "Core", url: "https://github.com/wanharaderta/ios-starter.git", from: "1.0.5")
@@ -25,7 +25,6 @@ let package = Package(
       ]),
     .testTarget(
       name: "ArticleTests",
-      dependencies: ["Article"]),
+      dependencies: ["Article"])
   ]
 )
-

@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 public struct ArticlesResponse: Decodable {
   
   let articles: [ArticleResponse]
@@ -51,7 +49,7 @@ extension ArticleResponse {
   }
   
   public static var mockArticle: ArticleResponse {
-    ArticleResponse (
+    ArticleResponse(
       source: nil,
       author: "mock author",
       title: "mock title",

@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import Core
 
-
 public struct ArticlesRepository<
   ArticlesLocaleDataSourceImpl: ArticlesLocaleDataSource,
   ArticlesRemoteDataSource: DataSource,
