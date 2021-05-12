@@ -37,7 +37,6 @@ where ArticlesUseCase.Request == String, ArticlesUseCase.Response == [ArticleMod
         }
       }, receiveValue: { articles in
         self.articles = articles
-        self.articlesTemp = articles
       }).store(in: &cancellables)
   }
 }
